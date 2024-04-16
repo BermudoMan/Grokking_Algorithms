@@ -1,23 +1,26 @@
 ###initial data
 graph = {
 	'start': {
-		'A': 6,
-		'B': 2
+		'A': 2,
+		'B': 2,
 	},
 	'A': {
-		'end': 1
+		'C': 2,
+		'end': 2,
 	},
 	'B': {
-		'A': 3,
-		'end': 5
+		'A': 2,
 	},
-	'end': {}
+	'C': {
+		'end': 2,
+		'B': -1
+	},
 }
 
 infinity = float('inf')
-costs = {'A': 6, 'B': 2, 'C': infinity}
+costs = {'A': 2, 'B': 2, 'C': infinity, 'D': infinity, 'end': infinity}
 
-parents = {'A': 'start', 'B': 'start', 'end': None}
+parents = {'A': 'start', 'B': 'start', 'C': None, 'D': None, 'end': None}
 
 
 ###array for saving completed nods

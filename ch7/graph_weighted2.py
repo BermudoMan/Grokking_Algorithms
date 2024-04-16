@@ -48,13 +48,14 @@ def find_lowest_cost_node(costs):
 node = find_lowest_cost_node(costs)
 while node is not None:
 	cost = costs[node]
-	# print(cost)
+
 	try:
 		neighbors = graph[node]
 	except:
-		print('KeyError: end', cost, node)
+		break
 	for n in neighbors.keys():
 		new_cost = cost + neighbors[n]
+		print(n, new_cost)
 		try:
 			if costs[n] > new_cost:
 				costs[n] = new_cost
@@ -63,4 +64,5 @@ while node is not None:
 			print('without cost!')
 	processed.append(node)
 	node = find_lowest_cost_node(costs)
+
 print(new_cost)
